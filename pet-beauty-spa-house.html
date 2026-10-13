@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pet Beauty & SPA House — груминг и спа для собак и кошек</title>
+<meta name="description" content="Pet Beauty & SPA House: купание, стрижка, груминг и спа-уход для собак и кошек. Звоните: +353 87 263 8058">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EAF4F2; --surface:#FFFFFF; --ink:#0E3B43; --muted:#4B6B70;
+  --lagoon:#1C7C86; --lilac:#8B7BF0; --sun:#FFD36E; --line:#CFE3E0;
+  --on-dark:#EAF4F2; --dark:#0E3B43;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A2A30; --surface:#10373E; --ink:#E6F2F0; --muted:#9FBDBF;
+    --lagoon:#5CC3CB; --lilac:#A99CFF; --line:#1F4A52; --dark:#07201F; --on-dark:#E6F2F0;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A2A30; --surface:#10373E; --ink:#E6F2F0; --muted:#9FBDBF;
+  --lagoon:#5CC3CB; --lilac:#A99CFF; --line:#1F4A52; --dark:#07201F; --on-dark:#E6F2F0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:Comfortaa,Nunito,sans-serif;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lilac);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-family:Comfortaa;font-weight:700;font-size:1.05rem;text-decoration:none;display:flex;align-items:center;gap:9px}
+.logo i{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#fff 0 14%,var(--lilac) 15% 100%);display:inline-block}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;background:var(--dark);color:var(--on-dark);font-weight:800;text-decoration:none;border:2px solid var(--dark);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+@media(max-width:760px){nav{display:none}.btn.hdr{padding:9px 16px;font-size:.9rem}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:72px 0 96px}
+.hero h1{font-size:clamp(2.3rem,7vw,4.6rem);max-width:12ch;font-weight:700;letter-spacing:-.02em}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.15rem;margin:22px 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.bubbles{position:absolute;inset:0;pointer-events:none}
+.bubbles span{position:absolute;bottom:-120px;border-radius:50%;
+  background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.95) 0 10%,rgba(255,255,255,.25) 11% 55%,rgba(139,123,240,.35) 100%);
+  border:1.5px solid rgba(139,123,240,.45);animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-130vh) translateX(var(--dx,20px))}}
+.tub{position:absolute;right:max(4%,10px);bottom:34px;width:min(38vw,330px);opacity:.95}
+@media(max-width:760px){.tub{opacity:.28;width:60vw}}
+
+/* sections */
+section{padding:72px 0}
+h2{font-size:clamp(1.8rem,4.5vw,2.8rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.svc{background:var(--surface);border:1px solid var(--line);padding:26px;border-radius:28px 28px 28px 8px}
+.svc:nth-child(even){border-radius:28px 28px 8px 28px}
+.svc h3{font-size:1.2rem;margin:10px 0 8px}
+.svc p{margin:0;color:var(--muted);font-size:.98rem}
+.svc .ic{font-size:1.9rem;line-height:1}
+
+/* picker */
+.picker{background:var(--dark);color:var(--on-dark);border-radius:36px;padding:44px 28px}
+.picker h2{color:var(--on-dark)}
+.tabs{display:flex;gap:10px;margin:20px 0 26px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:800;padding:10px 20px;border-radius:999px;border:2px solid var(--on-dark);background:transparent;color:var(--on-dark);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:#0E3B43}
+.pick{display:none;gap:12px;flex-direction:column}
+.pick.on{display:flex}
+.pick li{list-style:none;padding:14px 18px;border-radius:18px;background:rgba(255,255,255,.09)}
+.pick ul{margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.pick b{color:var(--sun)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;border-top:3px solid var(--lagoon);padding-top:16px}
+.steps li::before{content:counter(s);font-family:Comfortaa;font-weight:700;font-size:2rem;color:var(--lagoon)}
+.steps h3{font-size:1.1rem;margin:4px 0 6px}
+.steps p{margin:0;color:var(--muted);font-size:.97rem}
+
+/* promises */
+.pro{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
+.pro h3{font-size:1.1rem;margin-bottom:6px}
+.pro p{margin:0;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--lilac);color:#0E1F33;border-radius:36px;padding:52px 28px;text-align:center}
+.contact h2{margin-bottom:10px;color:#0E1F33}
+.phone{display:inline-block;font-family:Comfortaa;font-weight:700;font-size:clamp(1.7rem,6vw,3.2rem);text-decoration:none;margin:14px 0 24px;border-bottom:4px solid #0E1F33}
+.contact .btn{background:#0E1F33;color:#fff;border-color:#0E1F33}
+.contact .btn.alt{background:transparent;color:#0E1F33}
+.contact small{display:block;margin-top:20px;opacity:.85}
+footer{padding:32px 0 44px;color:var(--muted);font-size:.9rem;text-align:center}
+@media(prefers-reduced-motion:reduce){.bubbles span{animation:none;bottom:30%}.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><i></i>Pet Beauty &amp; SPA House</a>
+    <nav aria-label="Разделы">
+      <a href="#services">Услуги</a>
+      <a href="#program">Подбор программы</a>
+      <a href="#how">Как проходит визит</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="btn hdr" href="tel:+353872638058">Позвонить</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="bubbles" aria-hidden="true" id="bubbles"></div>
+  <svg class="tub" viewBox="0 0 320 220" aria-hidden="true">
+    <ellipse cx="160" cy="196" rx="130" ry="14" fill="var(--ink)" opacity=".1"/>
+    <path d="M30 100h260v24c0 44-32 70-70 70h-120c-38 0-70-26-70-70z" fill="var(--lagoon)"/>
+    <rect x="22" y="88" width="276" height="22" rx="11" fill="var(--ink)"/>
+    <circle cx="110" cy="76" r="34" fill="#fff"/><circle cx="160" cy="58" r="42" fill="#fff"/><circle cx="212" cy="76" r="32" fill="#fff"/>
+    <circle cx="146" cy="70" r="5" fill="var(--ink)"/><circle cx="178" cy="70" r="5" fill="var(--ink)"/>
+    <path d="M150 84q12 10 24 0" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="128" cy="40" rx="13" ry="22" fill="var(--lilac)" transform="rotate(-18 128 40)"/>
+    <ellipse cx="196" cy="38" rx="13" ry="22" fill="var(--lilac)" transform="rotate(18 196 38)"/>
+  </svg>
+  <div class="wrap">
+    <h1>Пусть вашему питомцу будет хорошо</h1>
+    <p>Груминг и спа для собак и кошек: бережное купание, аккуратная стрижка и уход, после которого хочется обниматься.</p>
+    <div class="cta">
+      <a class="btn" href="tel:+353872638058">Позвонить +353 87 263 8058</a>
+      <a class="btn alt" href="#services">Смотреть услуги</a>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <h2>Что мы делаем</h2>
+    <p class="lead">От быстрого купания до полного спа-дня. Подберём то, что нужно именно вашему питомцу.</p>
+    <div class="grid">
+      <article class="svc"><div class="ic">🛁</div><h3>Купание и сушка</h3><p>Шампуни под тип шерсти и кожи, мягкое полотенце и сушка без стресса.</p></article>
+      <article class="svc"><div class="ic">✂️</div><h3>Стрижка и тримминг</h3><p>Породные и гигиенические стрижки, аккуратные силуэты, уход за мордочкой и лапами.</p></article>
+      <article class="svc"><div class="ic">🪮</div><h3>Вычесывание и колтуны</h3><p>Бережно расчешем шерсть, уберём подшёрсток в период линьки.</p></article>
+      <article class="svc"><div class="ic">🐾</div><h3>Гигиена</h3><p>Когти, уши, глаза и подушечки лап. Всё, что делает питомца чистым и здоровым.</p></article>
+      <article class="svc"><div class="ic">🌿</div><h3>SPA-ритуалы</h3><p>Маски для шерсти, ароматерапия, расслабляющий массаж и уход за кожей.</p></article>
+      <article class="svc"><div class="ic">🐱</div><h3>Уход за кошками</h3><p>Спокойная обстановка и деликатный подход: купание, вычесывание, гигиена.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="program">
+  <div class="wrap">
+    <div class="picker">
+      <h2>Подберите программу</h2>
+      <p style="margin:0;opacity:.85">Выберите, кто у вас дома, и посмотрите, с чего лучше начать.</p>
+      <div class="tabs" role="group" aria-label="Тип питомца">
+        <button type="button" aria-pressed="true" data-t="dog">Собака</button>
+        <button type="button" aria-pressed="false" data-t="cat">Кошка</button>
+      </div>
+      <div class="pick on" id="dog"><ul>
+        <li><b>Короткая шерсть:</b> купание, сушка, когти и уши.</li>
+        <li><b>Длинная или кудрявая:</b> купание, вычесывание, стрижка.</li>
+        <li><b>Линька:</b> глубокое вычесывание подшёрстка и спа-маска.</li>
+        <li><b>Хочется расслабиться:</b> полный спа-день с массажем и ароматерапией.</li>
+      </ul></div>
+      <div class="pick" id="cat"><ul>
+        <li><b>Короткая шерсть:</b> мягкое купание, гигиена, когти.</li>
+        <li><b>Длинная шерсть:</b> купание, вычесывание, удаление колтунов.</li>
+        <li><b>Беспокойный характер:</b> спокойный визит без спешки, по договорённости.</li>
+        <li><b>Спа:</b> маска для шерсти и расслабляющий уход.</li>
+      </ul></div>
+      <p style="margin:24px 0 0">Точную стоимость назовём по телефону, когда узнаем породу и размер.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>Как проходит визит</h2>
+    <p class="lead">Всё просто и без суеты.</p>
+    <ol class="steps">
+      <li><h3>Звоните или пишете</h3><p>Расскажите о питомце: порода, возраст, характер.</p></li>
+      <li><h3>Подбираем программу</h3><p>Согласуем услуги, время и стоимость заранее.</p></li>
+      <li><h3>Ухаживаем бережно</h3><p>Работаем спокойно, делаем паузы, если питомцу нужно.</p></li>
+      <li><h3>Забираете красавца</h3><p>Чистый, пушистый и довольный.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Наши принципы</h2>
+    <p class="lead">Питомец должен уходить от нас счастливым.</p>
+    <div class="pro">
+      <div><h3>Без стресса</h3><p>Ласковый подход, терпение и никакой спешки.</p></div>
+      <div><h3>Безопасная косметика</h3><p>Средства, подобранные под тип шерсти и кожи.</p></div>
+      <div><h3>Чистота</h3><p>Инструменты и рабочие места обрабатываются перед каждым питомцем.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Запишите питомца на SPA</h2>
+      <p style="margin:0">Позвоните или напишите нам в WhatsApp, подберём удобное время.</p>
+      <a class="phone" href="tel:+353872638058">+353 87 263 8058</a>
+      <div class="cta" style="justify-content:center">
+        <a class="btn" href="tel:+353872638058">Позвонить</a>
+        <a class="btn alt" href="https://wa.me/353872638058" rel="noopener">Написать в WhatsApp</a>
+      </div>
+      <small>Адрес и часы работы уточняйте по телефону.</small>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="y"></span> Pet Beauty &amp; SPA House · <a href="tel:+353872638058">+353 87 263 8058</a></div>
+</footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+// bubbles
+var b=document.getElementById('bubbles');
+for(var i=0;i<16;i++){var s=document.createElement('span'),z=18+Math.random()*52;
+  s.style.cssText='width:'+z+'px;height:'+z+'px;left:'+(Math.random()*100)+'%;animation-duration:'+(9+Math.random()*10)+'s;animation-delay:-'+(Math.random()*14)+'s;--dx:'+((Math.random()-.5)*80)+'px';
+  b.appendChild(s);}
+// picker
+document.querySelectorAll('.tabs button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===btn)});
+    document.querySelectorAll('.pick').forEach(function(p){p.classList.toggle('on',p.id===btn.dataset.t)});
+  });
+});
+</script>
+</body>
+</html>
